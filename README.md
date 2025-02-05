@@ -1,0 +1,9 @@
+Pseudomonas Otitis Externa Detection Using Domain Adapted BERT Models (BERT)
+
+Pseudomonas otitis externa (POE) is a painful and often chronic condition affecting dogs, associated with inflammation of ear canal and pinna. In this study will aim to leverage the large volume of Electronic Health Records (EHR’s) collected by the Small Animal Veterinary Surveillance Network (SAVSNET) to best understand the effect of breed, age and sex/neuter status as risk factors to causing POE. To achieve this, we introduce DogBERT, a species-level domain adapted BERT model trained on 3 million canine veterinary consults from UK veterinary practices.  DogBERT is further fine-tuned to create DogBERT-PC, a multi-class classifier for the detection of POE that achieves an F1-Score of 81% on all classes and 89% on positive cases. Statistical analysis of the data obtained by DogBERT-PC shows an increased risk of contracting POE with age and for breeds such as the Italian Spinone, Newfoundland and American Cocker Spaniel. Sex/neuter status was shown to have a little effect on risk compared to age and breed.  
+
+This repo contains the code used to perform this study:
+1 - DogBERT: Domain Adaptation of BERT-base-uncased using canine veterinary clinical notes
+2 - Classifier Training: 3 seperate files used to train a binary classifier on balanced data, a binary classifier on unbalanced data and a multi-class classifier on unbalanced data
+3 - Classifier Testing: Comparing the performance of the best 3 performing classifers in (2) on a 150 previously un-seen, manually labelled records
+4 - Classification and Analysis of Records: Using the best performing classifer to classify records, then performing analysis on these records to determine breeds, ages and sex/neuter status combos most at risk of contracting POE
